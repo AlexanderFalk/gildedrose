@@ -1,4 +1,5 @@
 node {
-
-sh 'hello world'
+    stage('Hello'){
+        echo 'Hello, World'
+    }
 }
