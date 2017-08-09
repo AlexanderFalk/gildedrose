@@ -54,7 +54,6 @@ legendary item and as such its Quality is 80 and it never alters.
 
 # Exercises:
 
-- [x] 
 ### 0. Authenticate Jenkins to GitHub
 * Generate a new SSH key that will be used by Jenkins to prove itself to GitHub, by following the first part of [Generating a new SSH key](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
 * Add the public-key to your GitHub account by following [Adding a new SSH key to your GitHub account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
@@ -64,11 +63,9 @@ legendary item and as such its Quality is 80 and it never alters.
       write the passphrase you chose.
       * Save it.
 
-- [x] 
 ### 0.5 Fork the repository
 * Fork of the [Gilded Rose repository](https://github.com/praqma-training/gildedrose) to obtain your own version of the code.
 
-- [x] 
 ### 1. Create a job and clone git:
 * Go into your Jenkins server and click on the `New Item` button on the left.
 * Name your new job "gilded rose" and choose `Freestyle project` and click OK
@@ -98,7 +95,6 @@ Finished: SUCCESS
 ```
 **Congratulations, you have now made your first jenkins job!**
 
-- [x] 
 ### 2. Running a maven test
 
 * Click on the `Back to Project` button, and go in and `Configure` the job again.
@@ -106,7 +102,6 @@ Finished: SUCCESS
 * Click save, and build now once more.
 * Go into the console output like last time, and see that maven now actually runs your tests.
 
-- [x] 
 ### 3. Scheduling the build
 
 As a team, you do not want to go in and manually build the project every time you have some new code commited. _it needs to be automated, right!?!_
@@ -117,7 +112,6 @@ As a team, you do not want to go in and manually build the project every time yo
 * Push that change to GitHub, and monitor as Jenkins starts a build automatically.
 * Note that the build fails (because the test is failing) _this is OK_.
 
-- [x] 
 ### 4. Generating an artifact
 
 Our Java project needs to be packaged into a Jar file, in order to be ready for release.
@@ -130,12 +124,11 @@ Our Java project needs to be packaged into a Jar file, in order to be ready for 
 * Fix the unit test by implementing a dumb way of solving the test.
 * Push the change to GitHub, and monitor that Jenkins will grab that change and make a build, producing an artifact.
 
-- [x] 
 ### 4.5 Implementing the Gilded Rose
 Look in src/test/java/net/praqma/codeacademy/gildedrose/TexttestFixture.java for examples of items to use for tests.
 * Make a test and push it, observe it failing
 * Make changes to pass the test and push them, observe as only working code are built to production
-- [] 
+
 ### 5. Making the pipeline script work
 Now you have made a really nice pipeline in Jenkins just using the normal jobs.
 Now we want it *as code*!
@@ -152,7 +145,6 @@ The result should very well be that you have a blue (succesful) build, and in th
 
 We have to look into that now, *don't we?*
 
-- [] 
 ### 6. Convert your pipeline
 
 In pipeline, we like `stages` as they give us the ability to see where in the process things are going wrong.
@@ -176,7 +168,6 @@ Make three stages that does the following:
 
 Run this to see that it's working. The archiving part can be verified by looking for a small blue arrow next to the build number in the overview. Make sure you get your Jar file with you there.
 
-- [] 
 ### 7. Parallel and stashing
 We also need to get the javadoc generated for the project.
 
@@ -209,7 +200,7 @@ stage('parallel'){
 * Stash the results instead of archiving. Call them `jar` and `javadoc`
 * Unstash them in the `Results` step in the end where you archive them.
 
-- [] 
+
 ### Multibranch pipeline
 There is a file in this repository called Jenkinsfile
 
